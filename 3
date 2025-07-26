@@ -1,0 +1,10 @@
+clear
+%define angle
+xr = [input("xr(1,1) = "); input("xr(2,1) = "); input("xr(3,1) = ")];
+theta = sqrt(power(xr(1,1),2) + power(xr(2,1),2) + power(xr(3,1),2));
+k = [xr(1,1)/theta; xr(2,1)/theta; xr(3,1)/theta];
+%define rotation matrix thetaK
+R = [cos(theta) + k(1)^2*(1 - cos(theta)), k(1)*k(2)*(1 - cos(theta)) - k(3)*sin(theta), k(1)*k(3)*(1 - cos(theta)) + k(2)*sin(theta);
+    k(2)*k(1)*(1 - cos(theta)) + k(3)*sin(theta), cos(theta) + k(2)^2*(1 - cos(theta)), k(2)*k(3)*(1 - cos(theta)) - k(1)*sin(theta);
+    k(3)*k(1)*(1 - cos(theta)) - k(2)*sin(theta), k(3)*k(2)*(1 - cos(theta)) + k(1)*sin(theta), cos(theta) + k(3)^2*(1 - cos(theta))]
+
