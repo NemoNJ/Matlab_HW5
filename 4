@@ -1,0 +1,12 @@
+clear
+%define angle
+alpha_1  = input("alpha_1 = ");
+alpha_2   = input("alpha_2  = ");
+grammar = input("grammar = ");
+%define rotation matrix
+R_X1 = [ 1 0 0 ; 0 cosd(alpha_1) -sind(alpha_1); 0 sind(alpha_1) cosd(alpha_1)];
+R_X2 = [ 1 0 0 ; 0 cosd(alpha_2) -sind(alpha_2); 0 sind(alpha_2) cosd(alpha_2)];
+R_Z = [cosd(grammar) -sind(grammar) 0; sind(grammar) cosd(grammar)  0; 0 0 1];
+
+R = R_X1*R_Z*R_X2
+
